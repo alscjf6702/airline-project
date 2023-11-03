@@ -1,0 +1,69 @@
+Qna고객센터 게시판 테이블
+
+create table qnaboard(
+boardnum number(8) primary key,
+boardsubject varchar2(50) not null,
+boardcontent varchar2(4000),
+boardwriter varchar2(30),
+regidate date default sysdate,
+modifydate date default sysdate,
+boardreref number(8,0),
+boardrelevel number(2,0) default 0,
+boardreseq number(6,0) default 0,
+readcount number(6,0) default 0
+);
+
+---------------------------qna고객센터 게시판 sequence
+create sequence qnareboard_seq start with 1 INCREMENT by 1;
+
+--------------------------------------------------------------------
+
+testuser 회원/관리자 권한 테스트 위해서 만든 테이블  => kakaouser 테이블로 대체
+회원== 0 / 관리자 ==1
+
+create table testuser(
+username varchar2(20) not null,
+pass varchar2(15) not null,
+nickname varchar2(20) not null,
+email varchar2(30),
+admin number(2) default 0 not null,
+primary key(username)
+);
+
+insert into testuser values('test1','alscjf','둥둥이','alal@naver.com',0);
+
+insert into testuser values('admin1','admin','관리자','admin@naver.com',1);
+
+insert into testuser values('test2','dongdong','동구','donggi@naver.com',0);
+--------------------------------------------------------------------
+공지사항 게시판 테이블
+
+create table noticeboard(
+boardnum number(8,0) primary key,
+boardsubject varchar2(100) not null,
+boardcontent varchar2(4000),
+boardwriter vharchr2(50) not null,
+regidate date default sysdate,
+modifydate date default sysdate
+);
+
+---------------------------공지사항 게시판 sequence
+
+create sequence noticeboard_seq start with 1 increment by 1;
+alter table noticeboard add constraint fk_noticeboard foreign key(boardwriter) references kakaouser(userid); /* fk 추가*/
+
+
+
+--------------------------------------------------------------------
+noticefile 공지사항 게시판 파일 테이블
+
+create table noticefile(
+boardnum number,
+origin varchar2(100),
+uuid varchar2(100) primary key,
+extension varchar2(10),
+fileurl varchar2(100)
+);
+
+----------------------------noticefile의 boardnum가 noticeboard공지사항게시판 boardnum을 참조하는 제약조건 fk 설정
+alter table noticefile add constraint filenum foreign key(boardnum) references noticeboard(boardnum);
