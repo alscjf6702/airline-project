@@ -33,7 +33,9 @@
 
 # 게시판 시연영상
 https://github.com/alscjf6702/airline-project/assets/143998544/7eb38e69-3641-4584-a4a7-b4c9567b73a9
+
 https://github.com/alscjf6702/airline-project/assets/143998544/a9493a32-d9a3-40fc-aa8b-afdcee4ecc98
+
 https://github.com/alscjf6702/airline-project/assets/143998544/56bd00fc-3d7e-46fb-909a-a21a90010e05
 
 # 마이페이지 항공 운항 내
