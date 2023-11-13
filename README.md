@@ -1,7 +1,7 @@
 # 개발일정
 
 개발일정
-   ![개발일정표](https://github.com/alscjf6702/airline-project/assets/143998544/461758af-769d-43df-9f78-e443b1462316)
+
 ![Slide1](https://github.com/alscjf6702/airline-project/assets/143998544/95e8af8b-2249-45ff-841b-610aee1223bc)
 ![Slide2](https://github.com/alscjf6702/airline-project/assets/143998544/89a464bf-6714-4b65-982c-72242235b43e)
 ![Slide3](https://github.com/alscjf6702/airline-project/assets/143998544/87410e6e-9f1c-4ee2-a5b2-a64f2bfe35d8)
